@@ -3,38 +3,35 @@
 import { useState } from "react";
 
 export default function NewItem() {
-    const [count, setCount] = useState(1); // count is the state variable, setCount is the function to update the state default value is 0
+    const [quantity, setQuantity] = useState(1); // count is the state variable, setCount is the function to update the state default value is 0
     
     let btnIncrementDisable=false
     let btnDecrementDisable=false
 
-
-
     const increment = () => {
-        if (count < 20) {
-            
-            setCount(count + 1);
+        if (quantity < 20) {
+            setQuantity(quantity + 1);
         }
     };
     const decrement = () => {
-        if (count > 1) {
-            btnDecrementDisable=false
-            setCount(count - 1);
+        if (quantity > 1) {
+            setQuantity(quantity - 1);
         }
     };
-    if (count === 20) {
+    if (quantity === 20) {
         btnIncrementDisable=true
     }
-    if (count === 1) {
+    if (quantity === 1) {
         btnDecrementDisable=true
     }
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-4xl font-bold">Simple Counter</h1>
-            <p className="text-2xl">Count: {count}</p>
-            <button onClick={increment} className="bg-blue-500 mt-4 text-white px-4 py-2 rounded-md" disabled={btnIncrementDisable}>Increment</button>
-            <button onClick={decrement} className="bg-red-500 mt-4 text-white px-4 py-2 rounded-md" disabled={btnDecrementDisable}>Decrement</button>
+        <div className="bg-black min-h-screen flex justify-center items-start">
+            <div className="flex flex-row items-center bg-gray-200 p-1 shadow-md mt-4" style={{ width: '150px' }}>
+                <p className="mr-10 ml-1 text-sm" style={{ width: '50px'}}>{quantity}</p>
+                <button onClick={decrement} className="bg-red-500 text-white text-sm font-bold w-6 h-6 rounded-md mr-1 flex items-center justify-center disabled:opacity-50" disabled={btnDecrementDisable}>-</button>
+                <button onClick={increment} className="bg-blue-500 text-white text-sm font-bold w-6 h-6 rounded-md flex items-center justify-center disabled:opacity-50" disabled={btnIncrementDisable}>+</button>
+            </div>
         </div>
     );
 }
