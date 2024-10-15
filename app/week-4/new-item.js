@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 
-export default function NewItem() {
-    const [quantity, setQuantity] = useState(1); // count is the state variable, setCount is the function to update the state default value is 0
+export default function NewItem() {    
     
+    const [quantity, setQuantity] = useState(1); // count is the state variable, setCount is the function to update the state default value is 0 
+
     let btnIncrementDisable=false
     let btnDecrementDisable=false
 
