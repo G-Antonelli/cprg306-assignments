@@ -15,7 +15,7 @@ export default function PropsPage() {
 
   const handleItemSelect = (cleanedName) => {
     const name = cleanedName.split(",")[0].split(" ")[0].trim();
-    setSelectedItemName(name); // Set the cleaned name directly
+    setSelectedItemName(name); 
   };
 
   return (

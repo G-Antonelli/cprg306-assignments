@@ -32,7 +32,6 @@ export default function NewItem({onAddItem}) {
         const newItem = { id: newId, name, quantity, category };
 
         onAddItem(newItem);
-        // Reset values after submission
         setName('');
         setQuantity(1);
         setCategory('Produce');
